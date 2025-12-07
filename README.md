@@ -47,17 +47,15 @@ Machine Learning
 **Folder Structure**
 
 project/
-│── app.py                     # Flask backend server
-│── churn_model.pkl            # Trained ML model
-│── scaler.pkl                 # Standard scaler for numerical features
-│── columns.pkl                # Model input column ordering
-├── frontend/
-│   ├── index.html             # Static HTML version
-│   ├── index.css              # Styling
-│   ├── main.jsx               # React entry point
-│   ├── app_1.jsx              # React main UI component
-│
-└── README.md
+	1) app.py                     # Flask backend server
+	2) churn_model.pkl            # Trained ML model
+	3) scaler.pkl                 # Standard scaler for numerical features
+	4) columns.pkl                # Model input column ordering
+frontend/
+	1) index.html             # Static HTML version
+	2) index.css              # Styling
+	3) main.jsx               # React entry point
+	4) app_1.jsx              # React main UI component
 
 
 **Key Features**
