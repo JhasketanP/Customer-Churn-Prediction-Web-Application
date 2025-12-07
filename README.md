@@ -2,7 +2,6 @@
 This repository contains a fully interactive web-based Customer Churn Prediction system built using React.js (frontend) and Flask (backend). Users can input customer details, and the application predicts whether the customer is likely to churn or stay, along with the churn probability.
 
 **Project Overview**
-
 This project demonstrates a complete deployment-style workflow:
 
 Frontend
@@ -11,7 +10,6 @@ Frontend
 	3) Sends form data to backend for prediction
 	4) Displays prediction result + probability
 	   (Ref: frontend main component , entry point , stylesheet )
-
 Backend
 	1) Built using Flask
 	2) Loads:
@@ -26,7 +24,6 @@ A standalone HTML + JS implementation for testing without React.
 (Ref: HTML app version )
 
 **Tech Stack**
-
 Frontend
 	1) React.js (Vite)
 	2) JSX components
@@ -45,7 +42,6 @@ Machine Learning
 	3) Model: Random Forest / Logistic Regression / etc. (based on your .pkl)
 
 **Folder Structure**
-
 Poject
 	1) app.py (Flask backend server)
 	2) churn_model.pkl (Trained ML model)
