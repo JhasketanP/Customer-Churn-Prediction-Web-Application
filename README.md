@@ -49,7 +49,7 @@ Machine Learning
 project/
 	1) app.py                     # Flask backend server
 	2) churn_model.pkl            # Trained ML model
-	3) scaler.pkl                 # Standard scaler for numerical features
+	3) scaler.pkl                 # Standard scaler for numerical feature
 	4) columns.pkl                # Model input column ordering
 frontend/
 	1) index.html             # Static HTML version
