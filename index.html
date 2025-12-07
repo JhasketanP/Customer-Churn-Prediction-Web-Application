@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customer Churn Predictor</title>
+  <style>
+    body { font-family: sans-serif; background: #f8f8f8; padding: 20px; }
+    h1 { color: #333; }
+    form { background: white; padding: 20px; border-radius: 8px; max-width: 500px; margin: auto; }
+    input, select, button { margin-top: 10px; width: 100%; padding: 8px; }
+    .result { margin-top: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <h1>Customer Churn Predictor</h1>
+
+  <form id="churnForm">
+    <label>Gender:
+      <select name="gender">
+        <option value="1">Female</option>
+        <option value="0">Male</option>
+      </select>
+    </label>
+
+    <label>Senior Citizen:
+      <select name="SeniorCitizen">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+    </label>
+
+    <label>Partner:
+      <select name="Partner">
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+      </select>
+    </label>
+
+    <label>Tenure (months): <input type="number" name="tenure" value="12" required></label>
+    <label>Monthly Charges: <input type="number" name="MonthlyCharges" value="70.5" required></label>
+    <label>Total Charges: <input type="number" name="TotalCharges" value="850.3" required></label>
+
+    <button type="submit">Predict</button>
+  </form>
+
+  <div class="result" id="result"></div>
+
+  <script>
+    document.getElementById('churnForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      // Add all remaining fields with default values (important for model input)
+      const fullData = {
+        ...{
+          PhoneService: 1, MultipleLines: 0, OnlineSecurity: 1, OnlineBackup: 1,
+          DeviceProtection: 0, TechSupport: 1, StreamingTV: 0, StreamingMovies: 0,
+          PaperlessBilling: 1, InternetService_DSL: 1, InternetService_Fiber: 0,
+          InternetService_No: 0, Contract_Month-to-month: 1, Contract_One: 0,
+          Contract_Two: 0, PaymentMethod_Bank: 0, PaymentMethod_Credit: 0,
+          PaymentMethod_Electronic: 1, PaymentMethod_Mailed: 0
+        },
+        ...data
+      };
+
+      // Fix key names
+      fullData["InternetService_Fiber optic"] = fullData["InternetService_Fiber"];
+      fullData["Contract_One year"] = fullData["Contract_One"];
+      fullData["Contract_Two year"] = fullData["Contract_Two"];
+      fullData["PaymentMethod_Bank transfer (automatic)"] = fullData["PaymentMethod_Bank"];
+      fullData["PaymentMethod_Credit card (automatic)"] = fullData["PaymentMethod_Credit"];
+      fullData["PaymentMethod_Electronic check"] = fullData["PaymentMethod_Electronic"];
+      fullData["PaymentMethod_Mailed check"] = fullData["PaymentMethod_Mailed"];
+
+      const resultDiv = document.getElementById("result");
+      try {
+        const response = await fetch("http://localhost:5000/predict", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(fullData),
+        });
+        const result = await response.json();
+        resultDiv.innerText = result.prediction === 1
+          ? `⚠️ High Risk: Likely to Churn (Prob: ${result.churn_probability})`
+          : `✅ Safe: Likely to Stay (Prob: ${result.churn_probability})`;
+      } catch (err) {
+        resultDiv.innerText = "Error connecting to backend.";
+      }
+    });
+  </script>
+</body>
+</html>
