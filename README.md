@@ -51,7 +51,6 @@ project/
 │── churn_model.pkl            # Trained ML model
 │── scaler.pkl                 # Standard scaler for numerical features
 │── columns.pkl                # Model input column ordering
-│
 ├── frontend/
 │   ├── index.html             # Static HTML version
 │   ├── index.css              # Styling
@@ -63,10 +62,10 @@ project/
 
 **Key Features**
 
-✔ Real-time customer churn prediction
-✔ Clean, responsive UI
-✔ JSON-based API for ML inference
-✔ Model-compatible preprocessing
-✔ Interactive form elements
-✔ Clear output interpretation
+1) Real-time customer churn prediction
+2) Clean, responsive UI
+3) JSON-based API for ML inference
+4) Model-compatible preprocessing
+5) Interactive form elements
+6) Clear output interpretation
 
