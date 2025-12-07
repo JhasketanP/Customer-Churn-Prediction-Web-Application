@@ -4,19 +4,19 @@ This repository contains a fully interactive web-based Customer Churn Prediction
 **Project Overview**
 This project demonstrates a complete deployment-style workflow:
 Frontend
-	1) Built using React with Tailwind-like styling
-	2) Interactive UI for user input
-	3) Sends form data to backend for prediction
-	4) Displays prediction result + probability
-	   (Ref: frontend main component , entry point , stylesheet )
+1) Built using React with Tailwind-like styling
+2) Interactive UI for user input
+3) Sends form data to backend for prediction
+4) Displays prediction result + probability
+   (Ref: frontend main component , entry point , stylesheet )
 Backend
-	1) Built using Flask
-	2) Loads:
-		1) Trained ML model (churn_model.pkl)
-		2) Scaler for numerical features
-		3) Column mapping for correct input order
-	3) Accepts JSON input → Preprocesses → Predicts → Returns output
-	   (Ref: backend code )
+1) Built using Flask
+2) Loads:
+	1) Trained ML model (churn_model.pkl)
+	2) Scaler for numerical features
+	3) Column mapping for correct input order
+3) Accepts JSON input → Preprocesses → Predicts → Returns output
+   (Ref: backend code )
 
 Static HTML Version
 A standalone HTML + JS implementation for testing without React.
