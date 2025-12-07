@@ -3,7 +3,6 @@ This repository contains a fully interactive web-based Customer Churn Prediction
 
 **Project Overview**
 This project demonstrates a complete deployment-style workflow:
-
 Frontend
 	1) Built using React with Tailwind-like styling
 	2) Interactive UI for user input
