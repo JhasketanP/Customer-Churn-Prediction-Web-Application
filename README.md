@@ -23,34 +23,37 @@ A standalone HTML + JS implementation for testing without React.
 (Ref: HTML app version )
 
 **Tech Stack**
+
 Frontend
-	1) React.js (Vite)
-	2) JSX components
-	3) Tailwind-style UI classes
-	4) Fetch / Axios API calls
+1) React.js (Vite)
+2) JSX components
+3) Tailwind-style UI classes
+4) Fetch / Axios API calls
 
 Backend
-	1) Python Flask
-	2) Joblib (model loading)
-	3) NumPy & Pandas
-	4) Scikit-learn (scaler + model)
+1) Python Flask
+2) Joblib (model loading)
+3) NumPy & Pandas
+4) Scikit-learn (scaler + model)
 
 Machine Learning
-	1) Trained on Telco Customer Churn dataset
-	2) Preprocessing: scaling, encoding
-	3) Model: Random Forest / Logistic Regression / etc. (based on your .pkl)
+1) Trained on Telco Customer Churn dataset
+2) Preprocessing: scaling, encoding
+3) Model: Random Forest / Logistic Regression / etc. (based on your .pkl)
 
 **Folder Structure**
+
 Poject
-	1) app.py (Flask backend server)
-	2) churn_model.pkl (Trained ML model)
-	3) scaler.pkl (Standard scaler for numerical feature)
-	4) columns.pkl (Model input column ordering)
+1) app.py				(Flask backend server)
+2) churn_model.pkl 		(Trained ML model)
+3) scaler.pkl			(Standard scaler for numerical feature)
+4) columns.pkl			(Model input column ordering)
+   
 Frontend
-	1) index.html__Static HTML version
-	2) index.css__Styling
-	3) main.jsx__React entry point
-	4) app_1.jsx__React main UI component
+1) index.html			(Static HTML version)
+2) index.css			(Styling)
+3) main.jsx				(React entry point)
+4) app_1.jsx			(React main UI component)
 
 
 **Key Features**
