@@ -52,10 +52,10 @@ Poject
 	3) scaler.pkl (Standard scaler for numerical feature)
 	4) columns.pkl (Model input column ordering)
 Frontend
-	1) index.html (Static HTML version)
-	2) index.css (Styling)
-	3) main.jsx	(React entry point)
-	4) app_1.jsx (React main UI component)
+	1) index.html__Static HTML version
+	2) index.css__Styling
+	3) main.jsx__React entry point
+	4) app_1.jsx__React main UI component
 
 
 **Key Features**
